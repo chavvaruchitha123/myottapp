@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix Registration</title>
+<style>
+  /* Basic styling for demonstration */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: url("net.png"); */
+    background-position: center;
+  
+    /* <a href="#"><img src="logo.svg" alt="logo"></a> */
+  }
+  #register-container {
+    background-color:black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 20px;
+  }
+  input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  nav {
+    position: fixed;
+    /* padding: 25px 60px; */
+    margin-top: -550px;
+    z-index: 1;
+    margin-left: -1150px;
+}
+nav a img {
+    width: 150px;
+    height:60px
+}
+
+</style>
+</head>
+<body>
+  <nav>
+  <a href="#"><img src="netlogo.jpg" alt="logo" ></a>
+  </nav>
+<div id="register-container">
+  <h2 style="color: white;"> Register</h2>
+  <form       id="register-form">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+    <!-- <button  formaction="./p3.html">Skip</button> -->
+  </form>
+  <form action="./p3.html">
+    <button>Skip</button>
+  </form>
+</div>
+
+<script>
+
+document.getElementById("register-form").addEventListener("submit", function(event){
+  event.preventDefault(); // Prevent form submission
+
+  // Get input values
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  // Dummy registration validation (replace with your validation logic)
+  if(username && email && password) {
+    alert("Registration successful! Redirecting to Login page");
+    // Redirect to Netflix website or dashboard
+    window.localStorage.setItem("name",username)
+    window.localStorage.setItem("email",email)
+    window.localStorage.setItem("pass",password)
+         
+    window.location.href = "p2.html";
+  } else {
+   alert("Please fill in all fields.");
+  //  window.location.href="p3.html"
+  }
+});
+</script>
+</body>
+</html>
